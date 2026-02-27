@@ -58,7 +58,7 @@ function createDiskBodies() {
     const py = cy + Math.sin(angle) * radius;
 
     const tangential = angle + Math.PI / 2;
-    const circularV = Math.sqrt((G_BASE * sim.sunMass * sim.gravityFactor) / Math.max(radius, 1)) * 60;
+    const circularV = Math.sqrt((G_BASE * sim.sunMass * sim.gravityFactor) / Math.max(radius, 1));
 
     return {
       id: i + 1,
