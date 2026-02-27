@@ -1,0 +1,57 @@
+<!--
+//================================================================
+// File: index.html
+// Project: solar-system-sim
+// Location: /index.html
+// Canon Version: 1.0
+// Description:
+//     Main web page host for the Solar System creation-disk simulation.
+//
+//     Responsibilities:
+//       - Provides UI controls for Sun mass and gravity effect.
+//       - Hosts simulation canvas.
+//       - Wires static assets for styles and simulation logic.
+//
+//     Canon 1.0 changes:
+//       - Initial browser UI for creation disk controls and viewport.
+// ================================================================
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Solar System Sim - Creation Disk</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="layout">
+    <section class="panel">
+      <h1>Solar System Creator ☀️✨</h1>
+      <p class="subtitle">Tune the Sun. Watch orbits behave... or panic. 🤓</p>
+
+      <div class="control-group">
+        <label for="sun-mass">Sun Weight (Mass): <span id="sun-mass-value">1.00</span></label>
+        <input id="sun-mass" type="range" min="0.2" max="5" step="0.01" value="1.0" />
+      </div>
+
+      <div class="control-group">
+        <label for="gravity-factor">Sun Gravitational Effect: <span id="gravity-factor-value">1.00</span></label>
+        <input id="gravity-factor" type="range" min="0.2" max="5" step="0.01" value="1.0" />
+      </div>
+
+      <div class="control-actions">
+        <button id="reset-disk">Reset Creation Disk</button>
+      </div>
+
+      <div class="stats" id="stats"></div>
+    </section>
+
+    <section class="viewport-wrap">
+      <canvas id="sim-canvas" width="980" height="720" aria-label="Solar system simulation"></canvas>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>

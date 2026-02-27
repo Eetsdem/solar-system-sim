@@ -1,0 +1,123 @@
+/*
+//================================================================
+// File: styles.css
+// Project: solar-system-sim
+// Location: /styles.css
+// Canon Version: 1.0
+// Description:
+//     Visual styling for the Solar System creation-disk simulator.
+//
+//     Responsibilities:
+//       - Create readable control panel + simulation viewport layout.
+//       - Provide high-contrast, space-themed visuals.
+//
+//     Canon 1.0 changes:
+//       - Initial responsive layout and component styling.
+// ================================================================
+*/
+:root {
+  color-scheme: dark;
+  --bg: #090d1a;
+  --bg-soft: #121a31;
+  --line: #2f4f8b;
+  --text: #e8efff;
+  --accent: #ffd166;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: Inter, "Segoe UI", Roboto, sans-serif;
+  background: radial-gradient(circle at top, #1d2f56 0%, var(--bg) 65%);
+  color: var(--text);
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: minmax(280px, 360px) 1fr;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.panel {
+  background: rgba(9, 13, 26, 0.82);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 1rem;
+  height: fit-content;
+}
+
+h1 {
+  margin: 0;
+  font-size: 1.35rem;
+}
+
+.subtitle {
+  margin-top: 0.4rem;
+  color: #aac0ff;
+  font-size: 0.95rem;
+}
+
+.control-group {
+  margin: 1rem 0;
+}
+
+label {
+  display: block;
+  margin-bottom: 0.45rem;
+  font-weight: 600;
+}
+
+input[type="range"] {
+  width: 100%;
+}
+
+.control-actions {
+  margin-top: 1rem;
+}
+
+button {
+  border: 1px solid #5f84db;
+  background: linear-gradient(180deg, #2d4f9b, #213d7c);
+  color: white;
+  border-radius: 8px;
+  padding: 0.6rem 0.9rem;
+  cursor: pointer;
+}
+
+button:hover {
+  filter: brightness(1.1);
+}
+
+.stats {
+  margin-top: 1rem;
+  border-top: 1px solid var(--line);
+  padding-top: 0.75rem;
+  line-height: 1.5;
+  color: #d2deff;
+}
+
+.viewport-wrap {
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  overflow: hidden;
+  background: rgba(5, 8, 18, 0.9);
+}
+
+#sim-canvas {
+  width: 100%;
+  height: calc(100vh - 2rem);
+  display: block;
+}
+
+@media (max-width: 980px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+
+  #sim-canvas {
+    height: 70vh;
+  }
+}
